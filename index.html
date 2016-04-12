@@ -1,0 +1,74 @@
+
+<!-- 
+English:
+This example show how do a simple MVVM code with html+js 
+You can change the data in design and the object person will be changed, you can too make the change by the console(js) of the property from the object and the visual will be changed.
+Portugues:
+Esse exemplo mostra como fazer um simples MVVM framework com HTML e JS
+Você pode alterar os dados visualmente e o objeto pessoa vai ser alterado e também se você fizer a alteração via console da propriedade o visual será modificado.
+-->
+<!DOCTYPE html>
+<html>
+<head>
+ 	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/test.css"> 
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js" type="text/javascript"></script>
+    <script src="mvvm.js" type="text/javascript"></script>
+    <script src="main.js" type="text/javascript"></script>
+    
+</head>
+<body>
+<div class="container">
+ <div class="row">
+   <div class="col-sm-6">
+	      <button type="button" id="create_customer" class="btn btn-primary btn-xs">create</button>
+	   <table class="table table-bordered">
+	      <thead>
+	        <tr>
+	          <th>Name</th>
+	          <th>City</th>
+	          <th>State</th>
+			  <th>Address</th>
+			  <th>Street</th>
+			  <th>Email</th>
+			  <th>Telephone</th>
+			  <th>Zip</th>
+	        </tr>
+	      </thead>
+	      <tbody>
+	        <tr>
+	          <td></td>
+	          <td></td>
+	          <td></td>
+			  <td></td>
+			  <td></td>
+			  <td></td>
+			  <td></td>
+			  <td></td>
+	        </tr>	
+	      </tbody>
+	    </table>
+ 
+  </div>
+  <div class="col-sm-6" id="customers_form" style="display:none;border: 2px solid black;border-radius: 11px;padding: 25px;"> 
+    <form  class="form-inline" role="form"  id="customers_form2">
+      <input id="name"  type="text" placeholder="Name" data-bind="Name"/>
+      <input id="email"  type="text" placeholder="email" data-bind="email"/>
+      <input id="telephone"  type="number" placeholder="telephone" data-bind="telephone"/>
+      <input id="address"  type="text" placeholder="address" data-bind="address"/>
+      <input id="street"  type="text" placeholder="street" data-bind="street"/>
+      <input id="city"  type="text" placeholder="city" data-bind="city"/>
+      <input id="state"  type="text" placeholder="state" data-bind="zip"/>
+      <input id="zip"  type="number" placeholder="zip" data-bind="zip"/>
+   </form>
+  <div class="row" style="text-align:center">
+    <button class="btn-xs" id="done">done</button>
+    <button class="btn-xs">cancel</button>
+  </div> 
+</div>	
+ </div> 
+</div>
+<script type="text/javascript">
+</script>
+</body>
+</html>
