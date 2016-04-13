@@ -7,65 +7,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	
  	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/test.css">
-	
-    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js" type="text/javascript"></script>
-    <script src="mvvm.js" type="text/javascript"></script>
-    <script src="main.js" type="text/javascript"></script>
-	<script src="knockout.js" type="text/javascript"></script>    
+		
+    <script src="jquery.min.js" type="text/javascript"></script>  
+	<script src="knockout.js" type="text/javascript"></script>
+	<script src="create.js" type="text/javascript"></script>
+	<script src="list.js" type="text/javascript"></script>
+	<script src="app.js" type="text/javascript"></script>
+	      
 </head>
 <body>
-<div class="container">
- <div class="row">
-   <div class="col-sm-12">
-     <button type="button" id="create_customer" class="btn btn-primary btn-xs">create</button>
-     <table class="table table-bordered">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>City</th>
-          <th>State</th>
-		  <th>Address</th>
-		  <th>Street</th>
-		  <th>Email</th>
-		  <th>Telephone</th>
-		  <th>Zip</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-		  <td></td>
-		  <td></td>
-		  <td></td>
-		  <td></td>
-		  <td></td>
-        </tr>
-      </tbody>
-   </table>
- </div>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-sm-12">
+      <h1>Customers</h1>
+    <!-- </div> -->
+    <!-- <div class="col-sm-6"> -->
+      <button data-bind="click: addCustomer" class="btn btn-success">Add New Customer</button>
+  </div>
 </div> 
 <div class="row">
- <div class="col-sm-12" id="customers_form" style="display:none;border: 2px solid black;border-radius:11px;padding:25px;">
-   <form  class="form-inline" role="form"  id="customers_form2">
-     <input id="name"  type="text" placeholder="Name" data-bind="Name"/>
-   	 <input id="email"  type="text" placeholder="email" data-bind="email"/>
-   	 <input id="telephone"  type="number" placeholder="telephone" data-bind="telephone"/>
-   	 <input id="address"  type="text" placeholder="address" data-bind="address"/>
-   	 <input id="street"  type="text" placeholder="street" data-bind="street"/>
-   	 <input id="city"  type="text" placeholder="city" data-bind="city"/>
-   	 <input id="state"  type="text" placeholder="state" data-bind="zip"/>
-   	 <input id="zip"  type="number" placeholder="zip" data-bind="zip"/>
-   </form>
-   <div class="btn-group">
-     <button class="btn-xs" id="done">done</button>
-     <button class="btn-xs">cancel</button>
-	</div>
- </div>	
-</div> 
-</div>
-<script type="text/javascript">
-</script>
+ <div class="col-sm-12">	
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Customer</th>
+        <th>city</th>
+        <th>street</th>
+        <th>address</th>
+        <th>state</th>
+        <th>email</th>
+        <th>telephone</th>
+        <th>zip</th>												
+     </tr>
+   </thead>
+   <tbody data-bind="foreach: customers">
+     <tr>
+       <td><input data-bind="value:name"/></td>
+       <td><input data-bind="value:city"/></td>
+       <td><input data-bind="value:street"/></td>
+       <td><input data-bind="value:address"/></td>
+       <td><input data-bind="value:state"/></td>
+       <td><input data-bind="value:email"/></td>
+       <td><input data-bind="value:telephone"/></td>
+       <td><input data-bind="value:zip"/></td>
+       <td><span  data-bind="click: $root.removePlayer,
+        optionsText: $data"class="glyphicon glyphicon-trash text-danger"></span></td>
+     </tr>
+   </tbody>
+  </table>
+ </div> 
+ </div> 
+</div>	
 </body>
